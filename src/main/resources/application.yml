@@ -17,3 +17,14 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
+#    org.hibernate.type: trace
+
+#p6spy
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
+      multiline: true
+#      logging: slf4j
+#      log-file: spy.log
+#      log-format:
