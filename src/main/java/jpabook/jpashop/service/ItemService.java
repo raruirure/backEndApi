@@ -1,6 +1,7 @@
 package jpabook.jpashop.service;
 
 import jpabook.jpashop.domain.item.Item;
+import jpabook.jpashop.dto.UpdateItemDto;
 import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,17 @@ public class ItemService {
     @Transactional
     public void saveItem(Item item) {
         itemRepository.save(item);
+    }
+
+    /**
+     * 변경감지(dirty Checking)
+     */
+    @Transactional
+    public void updateItem(Long updateId, UpdateItemDto itemDto) {
+        // 영속 상태의 Item 찾아옴
+        Item findItem = itemRepository.findOne(updateId);
+        findItem.updateBasicInfo(itemDto);
+        // @Transactional에 의해 commit 되고 jpa가 영속성 entity의 flush() 처리를 함
     }
 
     public List<Item> findItems() {

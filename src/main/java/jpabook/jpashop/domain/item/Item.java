@@ -1,6 +1,7 @@
 package jpabook.jpashop.domain.item;
 
 import jpabook.jpashop.domain.Category;
+import jpabook.jpashop.dto.UpdateItemDto;
 import jpabook.jpashop.exception.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,5 +42,12 @@ public abstract class Item {
         if(restStock < 0) throw new NotEnoughStockException("not enough stockQuantity");
 
         this.stockQuantity = restStock;
+    }
+
+    // 3. 상품 기본정보 변경
+    public void updateBasicInfo(UpdateItemDto itemDto) {
+        this.name = itemDto.getName();
+        this.price = itemDto.getPrice();
+        this.stockQuantity = itemDto.getStockQuantity();
     }
 }
