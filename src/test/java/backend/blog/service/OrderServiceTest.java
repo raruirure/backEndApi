@@ -1,13 +1,14 @@
 package backend.blog.service;
 
-import backend.blog.domain.item.Item;
-import backend.blog.domain.order.OrderStatus;
-import backend.blog.exception.NotEnoughStockException;
-import backend.blog.repository.OrderRepository;
-import backend.blog.domain.Address;
-import backend.blog.domain.Member;
-import backend.blog.domain.item.Book;
-import backend.blog.domain.order.Order;
+import backend.blog.web.domain.item.Item;
+import backend.blog.web.domain.order.OrderStatus;
+import backend.blog.web.exception.NotEnoughStockException;
+import backend.blog.web.repository.OrderRepository;
+import backend.blog.web.domain.Address;
+import backend.blog.web.domain.Member;
+import backend.blog.web.domain.item.Book;
+import backend.blog.web.domain.order.Order;
+import backend.blog.web.service.OrderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

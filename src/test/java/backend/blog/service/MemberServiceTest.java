@@ -1,7 +1,8 @@
 package backend.blog.service;
 
-import backend.blog.repository.MemberRepository;
-import backend.blog.domain.Member;
+import backend.blog.web.repository.MemberRepository;
+import backend.blog.web.domain.Member;
+import backend.blog.web.service.MemberService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,8 @@ import static org.junit.Assert.*;
 @Transactional
 public class MemberServiceTest {
 
-    @Autowired MemberService memberService;
+    @Autowired
+    MemberService memberService;
     @Autowired
     MemberRepository memberRepository;
 
