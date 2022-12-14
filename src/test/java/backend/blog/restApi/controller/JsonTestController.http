@@ -1,0 +1,34 @@
+POST http://localhost:8080/api/json/loopTest
+Content-Type: application/json
+
+{
+  "json" : [
+    {
+      "level": 1,
+      "label": "name 1",
+      "title": "already_title",
+      "data": [
+        {
+          "level": 2,
+          "label": "name 2",
+          "title": "",
+          "data": [
+            {
+              "level": 3,
+              "label": "name 3",
+              "title": "",
+              "data": [
+                {
+                  "level": 4,
+                  "label": "name 4",
+                  "title": "",
+                  "data": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
